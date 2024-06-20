@@ -1,0 +1,4 @@
+/dist
+/poetry.lock
+/pyproject.toml
+/.pyproject.toml.swp
