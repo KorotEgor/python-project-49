@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
 import random
+
 import prompt
+
+from brain_games.scripts import brain_games
 
 
 def main():
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
+    name = brain_games.main()
     print('Answer "yes" if the number is even, otherwise answer "no".')
     counter_correct_answers = 0
     while counter_correct_answers < 3:
