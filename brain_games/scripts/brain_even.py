@@ -2,25 +2,27 @@
 
 import random
 
-import prompt
+from brain_games.scripts import base_for_games
 
-from brain_games.scripts import brain_games
 
+def find_solution():
+    expression = random.randint(0, 100)
+    solution_of_expression = ''
+    if expression % 2 == 0:
+        solution_of_expression = 'yes'
+    else:
+        solution_of_expression = 'no'
+    return solution_of_expression, expression
 
 def main():
-    name = brain_games.main()
-    print('Answer "yes" if the number is even, otherwise answer "no".')
+    question = 'Answer "yes" if the number is even, otherwise answer "no".'
+    base_for_games.greetings(question)
     counter_correct_answers = 0
     while counter_correct_answers < 3:
-        random_number = random.randint(0, 100)
-        print(f'Question: {random_number}')
-        user_answer = prompt.string('Your answer: ')
-        if (random_number % 2 == 0) == (user_answer == 'yes'):
-            print('Correct!')
+        solution_of_expression, expression = find_solution()
+        if base_for_games.checking_for_correctness(expression, solution_of_expression):
             counter_correct_answers += 1
-        else:
-            print(f"Let's try again, {name}!")
-    print(f'Congratulations, {name}!')
+    base_for_games.congratulations()
 
 
 if __name__ == '__main__':
