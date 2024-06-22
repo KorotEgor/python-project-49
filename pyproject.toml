@@ -18,7 +18,7 @@ brain-games = "brain_games.scripts.brain_games:main"
 brain-even = "brain_games.scripts.brain_even:main"
 brain-calc = "brain_games.scripts.brain_calc:calculate"
 brain-gcd = "brain_games.scripts.brain_gcd:greatest_common_divisor"
-brain-progressing = "brain_games.scripts.brain_progression:unknown_progression_number"
+brain-progression = "brain_games.scripts.brain_progression:unknown_progression_number"
 brain-prime = "brain_games.scripts.brain_prime:is_prime"
 
 [tool.poetry.group.dev.dependencies]
