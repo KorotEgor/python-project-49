@@ -6,16 +6,16 @@ from brain_games.scripts import base_for_games
 
 
 def find_solution():
-    step_of_progression = random.randint(0, 100)
+    step_of_progression = random.randint(1, 100)
     amount = random.randint(5, 15)
     start = random.randint(0, 100)
     end = start + step_of_progression * (amount - 1)
-    expressoin = [str(i) for i in range(start, end + 1, step_of_progression)]
+    expression = [str(i) for i in range(start, end + 1, step_of_progression)]
     number_of_unknown_number = random.randint(0, amount - 1)
-    solution_of_expression = expressoin[number_of_unknown_number]
-    expressoin[number_of_unknown_number] = '..'
-    expressoin = ' '.join(expressoin)
-    return solution_of_expression, expressoin
+    solution_of_expression = expression[number_of_unknown_number]
+    expression[number_of_unknown_number] = '..'
+    expression = ' '.join(expression)
+    return solution_of_expression, expression
 
 
 def unknown_progression_number():
