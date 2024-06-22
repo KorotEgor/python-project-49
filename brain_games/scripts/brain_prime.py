@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-import sympy
-
 import random
 
 from brain_games.scripts import base_for_games
@@ -9,9 +7,15 @@ from brain_games.scripts import base_for_games
 
 def find_solution():
     expression = random.randint(1, 100)
-    if sympy.isprime(expression):
-        return 'yes', expression
-    return 'no', expression
+
+    if expression < 2:
+        return False
+
+    for i in range(2, int(expression ** 0.5 + 1)):
+        if not (expression % i):
+            return False
+
+    return True
 
 
 def is_prime():
