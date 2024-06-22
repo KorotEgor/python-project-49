@@ -19,13 +19,13 @@ def question(expression):
     return prompt.string('Your answer: ')
 
 
-def checking_for_correctness(name, user_answer, solution_of_expression):
-    if solution_of_expression == user_answer:
+def checking_for_correctness(name, answer, solution):
+    if solution == answer:
         print('Correct!')
 
         return True
 
-    print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{solution_of_expression}'.")
+    print(f"'{answer}' is wrong answer ;(. Correct answer was '{solution}'.")
     print(f"Let's try again, {name}!")
 
     return False
