@@ -8,7 +8,7 @@ from brain_games.scripts import base_for_games
 
 
 def find_solution():
-    expression = random.randint(1, 100000)
+    expression = random.randint(1, 100)
     if sympy.isprime(expression):
         return 'yes', expression
     return 'no', expression
