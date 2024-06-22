@@ -9,13 +9,13 @@ def find_solution():
     expression = random.randint(1, 100)
 
     if expression < 2:
-        return False
+        return 'no', expression
 
     for i in range(2, int(expression ** 0.5 + 1)):
         if not (expression % i):
-            return False
+            return 'no', expression
 
-    return True
+    return 'yes', expression
 
 
 def is_prime():
