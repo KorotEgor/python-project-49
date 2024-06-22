@@ -30,5 +30,6 @@ def checking_for_correctness(name, user_answer, solution_of_expression):
 
     return False
 
+
 def congratulations(name):
     print(f'Congratulations, {name}!')

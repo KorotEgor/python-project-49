@@ -20,6 +20,7 @@ def find_solution():
             solution_of_expression = first_number * second_number
     return str(solution_of_expression), expression
 
+
 def calculate():
     question = 'What is the result of the expression?'
     base_for_games.run_game(question, find_solution)

@@ -15,6 +15,7 @@ def find_solution():
 
     return solution_of_expression, expression
 
+
 def main():
     question = 'Answer "yes" if the number is even, otherwise answer "no".'
     base_for_games.run_game(question, find_solution)
