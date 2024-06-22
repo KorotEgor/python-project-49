@@ -19,6 +19,5 @@ def greatest_common_divisor():
     base_for_games.run_game(question, find_solution)
 
 
-
 if __name__ == '__main__':
     greatest_common_divisor()
