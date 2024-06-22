@@ -12,17 +12,12 @@ def find_solution():
         solution_of_expression = 'yes'
     else:
         solution_of_expression = 'no'
+
     return solution_of_expression, expression
 
 def main():
     question = 'Answer "yes" if the number is even, otherwise answer "no".'
-    base_for_games.greetings(question)
-    counter_correct_answers = 0
-    while counter_correct_answers < 3:
-        solution_of_expression, expression = find_solution()
-        if base_for_games.checking_for_correctness(expression, solution_of_expression):
-            counter_correct_answers += 1
-    base_for_games.congratulations()
+    base_for_games.run_game(question, find_solution)
 
 
 if __name__ == '__main__':

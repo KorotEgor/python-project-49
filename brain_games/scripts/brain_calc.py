@@ -18,18 +18,11 @@ def find_solution():
             solution_of_expression = first_number - second_number
         case '*':
             solution_of_expression = first_number * second_number
-    return solution_of_expression, expression
+    return str(solution_of_expression), expression
 
 def calculate():
     question = 'What is the result of the expression?'
-    base_for_games.greetings(question)
-    counter_correct_answers = 0
-    while counter_correct_answers < 3:
-        solution_of_expression, expression = find_solution()
-        solution_of_expression = str(solution_of_expression)
-        if base_for_games.checking_for_correctness(expression, solution_of_expression):
-            counter_correct_answers += 1
-    base_for_games.congratulations()
+    base_for_games.run_game(question, find_solution)
 
 
 if __name__ == '__main__':

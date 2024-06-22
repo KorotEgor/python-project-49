@@ -1,25 +1,15 @@
-#!/usr/bin/env python3
-
-import prompt
-
-from brain_games.scripts import brain_games
+from brain_games import cli
 
 
-name = brain_games.main()
+def run_game(question, game_fn, wins=3):
+    name = cli.welcome_user()
+    cli.greetings(question)
 
-def greetings(question):
-    print(question)
-
-def checking_for_correctness(expression, solution_of_expression):
-    print(f'Question: {expression}')
-    user_answer = prompt.string('Your answer: ')
-    if solution_of_expression == user_answer:
-        print('Correct!')
-        return True
-    else:
-        print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{solution_of_expression}'.")
-        print(f"Let's try again, {name}!")
-        return False
-
-def congratulations():
-    print(f'Congratulations, {name}!')
+    counter_correct_answers = 0
+    while counter_correct_answers < wins:
+        solution_of_expression, expression = game_fn()
+        user_answer = cli.question(expression)
+        if cli.checking_for_correctness(name, user_answer, solution_of_expression):
+            counter_correct_answers += 1
+    
+    cli.congratulations(name)
